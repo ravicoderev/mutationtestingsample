@@ -109,7 +109,11 @@ The maven file has the following plugins and dependencies.
 mvn org.pitest:pitest-maven:mutationCoverage
 ```
 - Make sure mvn is in the path and run the above from the terminal prompt. 
-- On Build Success - the pitest reports can be found in the project ```target\pit-reports\``` folder
+- On BUILD SUCCESS - the pitest reports can be found in the project ```target\pit-reports\``` folder
+
+NOTE: Build Fails when
+- there are no tests
+- when tests fail
 
 ### That's it. Give it a go...!!
 - Open the Pit Test Coverage Report from the folder to view.
