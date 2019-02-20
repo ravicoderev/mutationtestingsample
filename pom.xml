@@ -26,13 +26,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-             
+
         <dependency>
-           <groupId>org.jacoco</groupId>
-           <artifactId>jacoco-maven-plugin</artifactId>
-           <version>0.8.3</version>
-           <type>maven-plugin</type>
-         </dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.3</version>
+            <type>maven-plugin</type>
+        </dependency>
 
     </dependencies>
 
@@ -44,30 +44,27 @@
                <artifactId>maven-surefire-plugin</artifactId>
                <version>3.0.0-M1</version>
             </plugin>
-                 
+
             <plugin>
-                  <groupId>org.jacoco</groupId>
-                  <artifactId>jacoco-maven-plugin</artifactId>
-                  <version>0.8.3-SNAPSHOT</version>
-                  
-                   
-                    <executions>
-                              <execution>
-                                        <id>jacoco-initialize</id>
-                                        <goals>
-                                         <goal>prepare-agent</goal>
-                                        </goals>
-                             </execution>
-                              <execution>
-                                        <id>jacoco-site</id>
-                                        <phase>package</phase>
-                                        <goals>
-                                         <goal>report</goal>
-                                        </goals>
-                              </execution>
-                    </executions>  
-                     
-            </plugin>     
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.3</version>
+                <executions>
+                    <execution>
+                        <id>pre-unit-test</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-unit-test</id>
+                        <phase>test</phase>
+                        <goals>
+                             <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
             <plugin>
                 <groupId>org.pitest</groupId>
