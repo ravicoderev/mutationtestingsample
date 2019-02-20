@@ -26,6 +26,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+             
+        <dependency>
+           <groupId>org.jacoco</groupId>
+           <artifactId>jacoco-maven-plugin</artifactId>
+           <version>0.8.3</version>
+           <type>maven-plugin</type>
+         </dependency>
 
     </dependencies>
 
@@ -41,7 +48,7 @@
             <plugin>
                   <groupId>org.jacoco</groupId>
                   <artifactId>jacoco-maven-plugin</artifactId>
-                  <version>0.8.4-SNAPSHOT</version>
+                  <version>0.8.3-SNAPSHOT</version>
                   
                    
                     <executions>
